@@ -581,7 +581,42 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
 .cv-contact-list a:hover { color: var(--color-primary); }
 .cv-contact-list i { color: var(--color-primary); width: 18px; }
 
-/* ---------- 10. RESPONSIVE ---------- */
+/* ---------- 10. LAYOUT CV TIGHTER ---------- */
+.cv-layout {
+  --bs-gutter-x: 1rem;
+  --bs-gutter-y: 1rem;
+}
+
+.cv-layout > [class*="col-"] {
+  min-width: 0;
+}
+
+.cv-section-card,
+.linkedin-profile-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.cv-section-card:hover,
+.linkedin-profile-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(10, 102, 194, 0.12);
+}
+
+.profile-meta {
+  row-gap: 8px;
+}
+
+.cv-timeline-item {
+  gap: 14px;
+}
+
+@media (max-width: 991.98px) {
+  .cv-layout > [class*="col-"] + [class*="col-"] {
+    margin-top: 0;
+  }
+}
+
+/* ---------- 11. RESPONSIVE ---------- */
 @media (max-width: 767.98px) {
   section { padding: 56px 0; }
   .hero-section { padding: 120px 0 60px; }
